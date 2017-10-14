@@ -1,0 +1,17 @@
+PROBLEM 1:
+How to remove dot and dash in the middle of number?
+
+PROBLEM 2:
+How to separate the first name, middle name and last name?
+
+
+Problem solving 1:
+=REPLACE(SUBSTITUTE(SUBSTITUTE(B5,".",""),"-",""),1,1,"")
+
+Problem solving 2:
+First name:
+=TRIM(IF(COUNTIF(A5,"* *"),LEFT(A5,FIND(" ",A5)),""))
+MIDDLE NAME:
+=TRIM(SUBSTITUTE(SUBSTITUTE(A5,B5,""),D5,""))
+LAST NAME:
+=TRIM(RIGHT(SUBSTITUTE(A5," ",REPT(" ",LEN(A5))),LEN(A5)))
